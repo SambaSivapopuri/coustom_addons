@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_event_mangement,access.event.mangement,model_event_mangement,base.group_user,1,1,1,1
-access_customer_details,access.customer.details,model_customer_details,base.group_user,1,1,1,1
-access_ticket_management,access.ticket.management,model_ticket_management,base.group_user,1,1,1,1
