@@ -2,20 +2,14 @@
     'name': 'Game Zone', 
     'summary': 'Game Zone',
     'description': '''
-        
+        test
     ''',
     'version': '1',
-    'category': 'Themes/Backend', 
     'license': 'LGPL-3', 
-    'author': 'MuK IT',
+    'author': 'Game Zone',
     
-    'depends': [
-        
-    ],
+    
     'data': [
         
-    ],
-    'installable': True,
-    'application': False,
-    'auto_install': False,
+    ]
 }
