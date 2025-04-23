@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_customer_details_tree" model="ir.ui.view">
+        <field name="name">customer.details.tree</field>
+        <field name="model">customer.details</field>
+        <field name="arch" type="xml">
+            <tree string="Customer Details">
+                <field name="mobile_no"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_customer_details_form" model="ir.ui.view">
+        <field name="name">customer.details.form</field>
+        <field name="model">customer.details</field>
+        <field name="arch" type="xml">
+            <form string="Customer Details">
+                <sheet>
+                    <group>
+                        <field name="mobile_no"/>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="gender"/>
+                        <field name="address"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <record id="action_customer_details" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">customer.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new customer
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_customer_details" name="Customer Details" parent="menu_customer_details_root"/>
+    <menuitem id="menu_customer_details_items" name="Customers" parent="menu_customer_details" action="action_customer_details"/>
+</odoo>

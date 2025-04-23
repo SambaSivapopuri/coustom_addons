@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+<record id="view_customer_management_tree" model="ir.ui.view">
+    <field name="name">customer.management.tree</field>
+    <field name="model">customer.management</field>
+    <field name="arch" type="xml">
+        <tree string="Customers" class="text-center" default_order="create_date desc">
+            <field name="name" optional="show"/>
+            <field name="mobile_no" optional="show"/>
+            <field name="email" optional="hide"/>
+            <field name="gender" optional="show"/>
+            <field name="city" optional="hide"/>
+        </tree>
+    </field>
+</record>
+
+    <!-- Form View -->
+    <record id="view_customer_management_form" model="ir.ui.view">
+        <field name="name">customer.management.form</field>
+        <field name="model">customer.management</field>
+        <field name="arch" type="xml">
+            <form string="Customer">
+                <sheet>
+                    <group col="4">
+                        <field name="name" />
+                    </group>
+                    <group col="4">
+                        <field name="mobile_no"/>
+                    </group>
+                    <group col="4">
+                        <field name="email"/>
+                    </group>
+                    <group col="4">
+                        <field name="gender"/>
+                    </group>
+                    <group>
+                        <field name="city" colspan="3"/>
+                    </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_customer_management" model="ir.actions.act_window">
+        <field name="name">Customers</field>
+        <field name="res_model">customer.management</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Customer
+            </p>
+        </field>
+    </record>
+</odoo>

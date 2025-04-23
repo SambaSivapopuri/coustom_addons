@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <template id="website_event_list" name="Website Event List">
+        <t t-call="website.layout">
+            <div class="container my-5">
+                <h2>Upcoming Events</h2>
+                <div class="row">
+                    <t t-foreach="events" t-as="event">
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm p-3">
+                                <h4><t t-esc="event.name"/></h4>
+                                <p><strong>Category:</strong> <t t-esc="event.category"/></p>
+                                <p><strong>Date:</strong> <t t-esc="event.event_date"/></p>
+                                <p><strong>Price:</strong> ₹<t t-esc="event.price"/></p>
+                                <p><strong>Discount:</strong> <t t-esc="event.discount"/>%</p>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <menuitem id="menu_event_root" name="Sport Zone" sequence="35"/>
+   <menuitem id="menu_event_management" name="Event" parent="menu_event_root" action="action_event_management"/>
+   <menuitem id="menu_customer_management" name="Customer" parent="menu_event_root" action="action_customer_management"/>
+   <menuitem id="menu_ticket_management" name="Tickets" parent="menu_event_root" sequence="20"/>
+   <menuitem id="menu_ticket_management" name="Tickets" parent="menu_event_root" action="action_ticket_management" sequence="20"/>        
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+  <report
+    id="ticket_report"
+    model="ticket_management.ticket"
+    string="Ticket Report"
+    report_type="qweb-pdf"
+    name="sports_zone.ticket_report"
+    file="sports_zone.ticket_report"
+    attachment_use="True"
+    attachment="(object.name or '') + '.pdf'"/>
+
+   </data>
+<odoo>
+  

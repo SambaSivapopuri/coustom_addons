@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+
+    <!-- Website menu to access Create Event -->
+    <record id="menu_event_form_12" model="website.menu">
+        <field name="name">Create Event</field>
+        <field name="url">/event_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">55</field>
+    </record>
+
+    <!-- Template for Create Event Form -->
+    <template id="create_event_template" name="Create Event Page" page="true">
+        <t t-call="website.layout">
+            <div class="container mt-4">
+                <h1>Create an Event</h1>
+                <form method="post" action="/create/webevent">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" required="required"/>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Number of Seats</label>
+                        <input type="number" name="no_seats" required="required" class="form-control"/>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Price</label>
+                        <input type="text" name="price" required="required" class="form-control"/>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Discount</label>
+                        <input type="number" name="discount" step="0.01" class="form-control"/>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label>Category</label>
+                        <select name="category" class="form-control" required="required">
+                            <option value="child">Child</option>
+                            <option value="adult" selected="selected">Adult</option>
+                            <option value="combo">Combo</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+
+                <t t-if="success">
+                    <div class="alert alert-success mt-3">Event Created Successfully!</div>
+                </t>
+            </div>
+        </t>
+    </template>
+
+  </data>
+</odoo>

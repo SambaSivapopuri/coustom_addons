@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_event_root"
+              name="GAME ZONE"
+              sequence="35"/>
+
+    <menuitem id="menu_event"
+              name="Event"
+              parent="menu_event_root"
+              action="action_event_mangement"/>
+
+    <menuitem id="menu_customer_details"
+              name="Customer"
+              parent="menu_event_root"
+              action="action_customer_details"/>
+
+    <menuitem id="menu_ticket_management"
+          name="Tickets"
+          parent="menu_event_root"
+          sequence="20"/>
+
+    <menuitem id="menu_ticket_management"
+              name="Tickets"
+              parent="menu_event_root"
+              action="action_ticket_management"
+              sequence="20"/> 
+
+              
+</odoo>

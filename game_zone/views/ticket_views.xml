@@ -1,0 +1,60 @@
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_ticket_management_form" model="ir.ui.view">
+        <field name="name">ticket.management.form</field>
+        <field name="model">ticket.management</field>
+        <field name="arch" type="xml">
+            <form string="Ticket Management">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_id"
+                               domain="[('is_customer', '=', True)]"
+                               context="{'default_name': '', 'default_mobile_no': ''}"
+                               options="{'no_create': False, 'no_open': False}"
+                               placeholder="Search or create by mobile number"/>
+                        <field name="event_id"/>
+                        <field name="booking_date"/>
+                        <field name="seat_number"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_ticket_management_tree" model="ir.ui.view">
+        <field name="name">ticket.management.tree</field>
+        <field name="model">ticket.management</field>
+        <field name="arch" type="xml">
+            <tree string="Ticket Management">
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="event_id"/>
+                <field name="booking_date"/>
+                <field name="seat_number"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_ticket_management" model="ir.actions.act_window">
+          <field name="name">Tickets</field>
+          <field name="res_model">ticket.generate</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+                 <p class="o_view_nocontent_smiling_face">
+                Create your first ticket
+          </p>
+    </field>
+</record>
+
+
+    <!-- Menus -->
+    <menuitem id="menu_ticket_management_root" name="Ticket Management"/>
+    <menuitem id="menu_ticket_management" name="Manage Tickets" parent="menu_ticket_management_root"/>
+    <menuitem id="menu_ticket_management_items" name="Tickets" parent="menu_ticket_management" action="action_ticket_management"/>
+
+</odoo>

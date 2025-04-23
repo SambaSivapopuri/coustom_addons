@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_event_management,access.event.management,model_event_management,base.group_user,1,1,1,1
+access_customer_management_user,customer.management,model_customer_management,base.group_user,1,1,1,1
+access_ticket_management_user,ticket.management,model_ticket_management,base.group_user,1,1,1,1
